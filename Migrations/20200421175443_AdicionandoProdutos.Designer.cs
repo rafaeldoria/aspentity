@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using aspentity.Database;
 
 namespace aspentity.Migrations
 {
     [DbContext(typeof(applicationDBContext))]
-    partial class applicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200421175443_AdicionandoProdutos")]
+    partial class AdicionandoProdutos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,15 +54,13 @@ namespace aspentity.Migrations
 
                     b.Property<int?>("CategoriaId");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Nome");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriaId");
 
-                    b.ToTable("ProdutosLoja");
+                    b.ToTable("Produtos");
                 });
 
             modelBuilder.Entity("aspentity.Models.Produto", b =>

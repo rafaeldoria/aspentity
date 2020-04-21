@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using aspentity.Database;
 
 namespace aspentity.Migrations
 {
     [DbContext(typeof(applicationDBContext))]
-    partial class applicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200421184839_updateTableProdutos")]
+    partial class updateTableProdutos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
